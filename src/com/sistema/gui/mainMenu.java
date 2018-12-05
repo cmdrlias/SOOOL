@@ -23,7 +23,9 @@ import javax.swing.DefaultComboBoxModel;
 public class mainMenu {
 	
 	ArrayList<Instituicao> instituicoes = new ArrayList<Instituicao>();
-
+	
+	
+	JComboBox<String> comboBox = new JComboBox<String>();
 	private JFrame frame;
 	
 	public static void main(String[] args) {
@@ -48,7 +50,7 @@ public class mainMenu {
 	}
 	
 	public JComboBox setComboboxInstituicao() {
-		JComboBox<String> comboBox = new JComboBox<String>();
+		
 		Vector<String> inst = new Vector<String>();
 		
 		instituicoes.add(new Instituicao("UNIBH", "Belo Horizonte", "Minas Gerais"));
@@ -84,32 +86,28 @@ public class mainMenu {
 		txtpnMenu.setBounds(12, 47, 91, 23);
 		frame.getContentPane().add(txtpnMenu);
 		
-		JButton btnNovoCursoDe = new JButton("Cursos de Graduação");
+		JButton btnNovoCursoDe = new JButton("Cursos de Gradua��o");
 		btnNovoCursoDe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cursosGraduacao window = new cursosGraduacao();
-				window.frame.setVisible(true);
+				window.frameCG.setVisible(true);
 			}
 		});
 		btnNovoCursoDe.setBounds(22, 165, 450, 44);
 		frame.getContentPane().add(btnNovoCursoDe);
 		
-		JButton btnNovoCursoDe_1 = new JButton("Cursos de Extensão");
+		JButton btnNovoCursoDe_1 = new JButton("Cursos de Extens�o");
 		btnNovoCursoDe_1.setBounds(522, 165, 450, 44);
 		frame.getContentPane().add(btnNovoCursoDe_1);
-		
-		// ComboBox instituição
 		
 		JComboBox comboBox = setComboboxInstituicao();
 		frame.getContentPane().add(comboBox);
 		
-		JLabel lblSelecioneUmaInstituio = new JLabel("Selecione uma instituição:");
+		JLabel lblSelecioneUmaInstituio = new JLabel("Selecione uma institui��o:");
 		lblSelecioneUmaInstituio.setBounds(22, 93, 206, 15);
 		frame.getContentPane().add(lblSelecioneUmaInstituio);
 		
-		// Botão de ação - Nova instituição
-		
-		JButton btnNovaInstituio = new JButton("Nova instituição");
+		JButton btnNovaInstituio = new JButton("Nova institui��o");
 		btnNovaInstituio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				adicionaInstituicao window = new adicionaInstituicao();
